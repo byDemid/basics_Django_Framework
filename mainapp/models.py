@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class ProductCategory(models.Model):
     name = models.CharField(
         verbose_name='имя',
@@ -20,6 +21,7 @@ class ProductCategory(models.Model):
     class Meta:
         verbose_name = 'категория'
         verbose_name_plural = 'категории'
+
 
 class Product(models.Model):
     category = models.ForeignKey(
@@ -54,12 +56,11 @@ class Product(models.Model):
         verbose_name='количество на складе',
         default=0,
     )
+
     def __str__(self):
         return f'{self.name} - {self.pk}'
 
     class Meta:
         verbose_name = 'товар'
         verbose_name_plural = 'товары'
-
-
 
