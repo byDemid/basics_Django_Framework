@@ -20,7 +20,7 @@ def index(request):
 
 
     products = Product.objects.all()[:4]
-
+    print(products)
     context = {
         'title': title,
         'links_menu': links_menu,
