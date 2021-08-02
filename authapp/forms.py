@@ -12,8 +12,8 @@ class ShopUserLoginForm(AuthenticationForm):
 
     def __init__(self, *args, **kwargs):
         super(ShopUserLoginForm, self).__init__(*args, **kwargs)
-        for field_name, filed in self.fields.items():
-            filed.widget.attrs['class'] = 'form-control'
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
 
 
 class ShopUserRegisterForm(AuthenticationForm):
@@ -23,8 +23,8 @@ class ShopUserRegisterForm(AuthenticationForm):
 
     def __init__(self, *args, **kwargs):
         super(ShopUserRegisterForm, self).__init__(*args, **kwargs)
-        for field_name, filed in self.fields.items():
-            filed.widget.attrs['class'] = 'form-control'
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
 
     def clean_age(self):
         data = self.cleaned_data['age']
@@ -41,8 +41,8 @@ class ShopUserEditForm(AuthenticationForm):
 
     def __init__(self, *args, **kwargs):
         super(ShopUserEditForm, self).__init__(*args, **kwargs)
-        for field_name, filed in self.fields.items():
-            filed.widget.attrs['class'] = 'form-control'
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
 
     def clean_age(self):
         data = self.cleaned_data['age']
