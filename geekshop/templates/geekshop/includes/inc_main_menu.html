@@ -1,12 +1,13 @@
 <div class="header clearfix">
-	<a href="/" class="logo"></a>
+	<a href="{% url 'index' %}" class="logo"></a>
 	<ul class="menu">
-		<li><a href="/" class="active">домой</a></li>
-		<li><a href="{% url 'products:index' %}">продукты</a></li>
-		<li><a href="{% url 'contacts' %}">контакты</a></li>
+		<li><a href="/" class="{% if request.resolver_match.view_name == 'index' %}active{% endif %}">домой</a></li>
+<!--		<li><a href="{% url 'index' %}" class="{% if request.resolver_match.view_name == 'index' %}active{% endif %}">домой</a></li>-->
+		<li><a href="{% url 'products:index' %}" class="{% if request.resolver_match.view_name == 'products:index' %}active{% endif %}">продукты</a></li>
+		<li><a href="{% url 'contacts' %}" class="{% if request.resolver_match.view_name == 'contacts' %}active{% endif %}">контакты</a></li>
 		{% if user.is_authenticated %}
 		<li>
-   			<a href="{#% url 'auth:edit' %}">
+   			<a href="{% url 'auth:edit' %}">
         		{{ user.first_name|default:'Пользователь' }}
     		</a>
 		</li>

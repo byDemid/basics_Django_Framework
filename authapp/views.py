@@ -40,8 +40,8 @@ def register(request):
             register_form.save()
 
             return HttpResponseRedirect(reverse('auth:login'))
-        else:
-            register_form = ShopUserRegisterForm()
+    else:
+        register_form = ShopUserRegisterForm()
 
     context = {
         'title': title,
@@ -59,8 +59,8 @@ def edit(request):
             edit_form.save()
 
             return HttpResponseRedirect(reverse('auth:edit'))
-        else:
-            register_form = ShopUserEditForm(instance=request.user)
+    else:
+        edit_form = ShopUserEditForm(instance=request.user)
 
     context = {
         'title': title,
