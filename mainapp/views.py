@@ -17,10 +17,8 @@ def index(request):
     # for el in ProductCategory.objects.all():
     #     links_menu.append({'href': el.slug, 'name': el.name})
 
-
-
     products = Product.objects.all()[:4]
-    print(products)
+
     context = {
         'title': title,
         'links_menu': links_menu,
